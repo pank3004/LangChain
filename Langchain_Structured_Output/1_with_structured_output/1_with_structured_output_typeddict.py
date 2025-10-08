@@ -1,0 +1,28 @@
+from langchain_google_genai import ChatGoogleGenerativeAI
+from dotenv import load_dotenv
+from typing import  TypedDict, Annotated, Optional, Literal
+from pydantic import BaseModel
+
+
+load_dotenv()
+
+model=ChatGoogleGenerativeAI(model="gemini-2.5-pro", temperature=0)
+
+class Review(TypedDict): 
+    key_themes: Annotated[list[str], "The main themes discussed in the review"]
+    summary: Annotated[str, "A brief summary of the review in 1-2 sentences"]
+    sentiment: Annotated[Literal['Pos', 'Neg', 'neu'], "The overall sentiment of the review, either positive, negative, or neutral"]
+    pros: Annotated[Optional[list[str]], "A list of positive aspects mentioned in the review"]
+    cons: Annotated[Optional[list[str]], "A list of negative aspects mentioned in the review"]
+
+structured_model=model.with_structured_output(Review)
+
+response=structured_model.invoke('''
+                                The new Pixel 9 Pro is an impressive phone. The camera captures stunning photos in any lighting, 
+                                 and the performance is buttery smooth. However, the battery drains faster than expected when gaming,
+                                  and it heats up a bit. The design looks premium and feels solid in hand. 
+                                 Overall, it’s a great choice for photography lovers but not ideal for heavy gamers.
+                                ''')
+
+print(response)
+print(response.sentiment)

@@ -1,10 +1,7 @@
-
-# user topic --> prompt1--> model --> parser --> prompt2--> model--> parser-->result
-
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 from langchain_core.output_parsers import StrOutputParser
-from langchain.schema.runnable import RunnableSequence, RunnableParallel, RunnablePassthrough, RunnableLambda, RunnableBranch
+from langchain.schema.runnable import RunnableSequence, RunnablePassthrough, RunnableBranch
 from langchain_core.prompts import PromptTemplate
 
 load_dotenv()

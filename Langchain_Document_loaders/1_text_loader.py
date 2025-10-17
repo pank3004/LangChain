@@ -11,7 +11,6 @@ model=ChatGoogleGenerativeAI(model='gemini-2.5-pro')
 loader=TextLoader("cricket.txt", encoding='utf-8')
 docs=loader.load()
 
-
 print(docs)
 
 print(docs[0])  # document

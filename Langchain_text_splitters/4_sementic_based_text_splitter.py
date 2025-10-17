@@ -36,8 +36,6 @@ for i, doc in enumerate(docs, start=1):
     print("-" * 50)
 
 
-
-
 # Embeddings are Key: 
     # It uses an embedding model (like one from OpenAI or a local one) to convert each sentence into a list of numbers called a vector or an "embedding." This vector represents the sentence's meaning.
 

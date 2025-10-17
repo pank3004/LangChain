@@ -1,10 +1,8 @@
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader   # to load only text based pdf
 
-
 loader=PyPDFLoader("sample.pdf")
 docs=loader.load()
-
 
 splitter=CharacterTextSplitter(
     chunk_size=105, 
@@ -26,8 +24,6 @@ splitter=CharacterTextSplitter(
 #     Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
 #     Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 #     '''
-
-
 
 # result=splitter.split_text(docs)
 

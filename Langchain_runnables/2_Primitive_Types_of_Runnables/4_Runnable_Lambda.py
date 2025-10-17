@@ -1,5 +1,4 @@
 
-# user topic --> prompt1--> model --> parser --> prompt2--> model--> parser-->result
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv

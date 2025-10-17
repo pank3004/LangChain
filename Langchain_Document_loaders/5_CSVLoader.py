@@ -4,7 +4,6 @@ from langchain_community.document_loaders import CSVLoader  # to load csv file
 loader=CSVLoader("day.csv")
 docs=loader.load()
 
-
 print(docs)
 
 print(type(docs))   # list 

@@ -18,7 +18,5 @@ print(type(docs))   # list
 # print(docs[0].page_content)
 # print(docs[0].metadata)
 
-
-
 for doc in docs: 
     print(doc.metadata)

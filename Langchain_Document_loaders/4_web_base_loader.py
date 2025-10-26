@@ -26,6 +26,6 @@ prompt=PromptTemplate(
 
 chain=prompt | model | parser
 
-ans=chain.invoke({'question':'can you list down top 100 positive review', 'text':docs[0].page_content})
+ans=chain.invoke({'question':'what is the collour of the phone ', 'text':docs[0].page_content})
 
 print(ans)
